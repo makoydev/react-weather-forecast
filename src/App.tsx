@@ -1,9 +1,9 @@
-import style from "./App.module.scss";
+import LandingPage from "./screens/Landing";
 
 function App() {
   return (
     <>
-      <h1 className={style.container}>Hello World</h1>
+      <LandingPage />
     </>
   );
 }
