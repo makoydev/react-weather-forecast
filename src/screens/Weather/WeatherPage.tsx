@@ -7,6 +7,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { kelvinToFahrenheit } from "../../utils/TemperatureConverter";
+import { formatDate } from "../../utils/dateFormatter";
 
 interface WeatherPageProps {
   city: string;
@@ -30,15 +32,6 @@ interface WeatherData {
     dt_txt: string; // Date and time in text format
   }[];
 }
-
-const kelvinToFahrenheit = (kelvin: number) => {
-  return ((kelvin - 273.15) * 9) / 5 + 32;
-};
-
-const formatDate = (timestamp: number) => {
-  const date = new Date(timestamp * 1000);
-  return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
-};
 
 const WeatherPage: React.FC<WeatherPageProps> = ({ city }) => {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
