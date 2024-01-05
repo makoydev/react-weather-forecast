@@ -9,6 +9,7 @@ import { CityProvider } from "./context/useCityContext";
 import { useEffect } from "react";
 import ProtectedRoute from "./screens/ProtectedRoute";
 import Header from "./components/Header";
+import Loading from "./components/Loading";
 
 const App = () => {
   const { isLoading, user, isAuthenticated } = useAuth0();
@@ -19,7 +20,7 @@ const App = () => {
   }, [isAuthenticated, user]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (

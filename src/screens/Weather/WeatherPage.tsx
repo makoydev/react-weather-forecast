@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import style from "./WeatherPage.module.scss";
 import WeatherPageTable from "./WeatherPageTable";
 import { useParams } from "react-router-dom";
+import Loading from "../../components/Loading";
 
 interface WeatherPageProps {}
 
@@ -55,7 +56,7 @@ const WeatherPage: React.FC<WeatherPageProps> = () => {
     fetchWeatherData();
   }, [city]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>Error: {error}</p>;
 
   return (
