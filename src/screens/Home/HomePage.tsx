@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./HomePage.module.scss";
-import { useCity } from "../../context/useCityContext";
 import SearchIcon from "@mui/icons-material/Search";
+import { useCity } from "../../context/useCity";
 
 interface HomePageProps {
   userName: string;
