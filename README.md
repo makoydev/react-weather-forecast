@@ -19,6 +19,22 @@ This Weather App is a React-based web application allowing users to view weather
 - **Responsive Design**: The app is fully responsive and works across different devices and screen sizes.
 - **Protected Routes**: Certain routes are accessible only to authenticated users, enhancing security.
 
+## Project Structure
+
+The project is structured as follows:
+
+- `src/`: This is where the main application code resides.
+  - `App.tsx`: The main application component.
+  - `assets/`: Contains static files like images.
+  - `components/`: Contains reusable components like buttons and headers.
+  - `context/`: Contains React context providers.
+  - `screens/`: Contains the different screens of the application.
+  - `utils/`: Contains utility functions.
+- `public/`: Contains public assets that will be served directly by the server.
+- `.env`: Contains environment variables. Make sure to create your own and not commit it to the repository.
+- `vite.config.ts`: Contains the configuration for Vite, the build tool used in this project.
+- `tsconfig.json`: Contains the configuration for the TypeScript compiler.
+
 ## Installation
 
 To set up the project locally, follow these steps:
@@ -45,16 +61,12 @@ or if you're using yarn:- `yarn install`
     -   Create a `.env` file in the root directory.
     -   Add your Auth0 domain and client ID:
 
-        makefile
-
 1.  - `VITE_AUTH0_DOMAIN=your-auth0-domain
 VITE_AUTH0_CLIENT_ID=your-auth0-client-id`
 
 ## Running the Application
 
 To run the application in development mode, execute:
-
-arduino
 
 `npm run dev`
 
