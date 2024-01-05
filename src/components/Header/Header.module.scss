@@ -3,20 +3,8 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding-top: 20px;
-}
-
-.backBtn {
-  padding: 0.5rem;
-  background-color: #f0f0f0;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  background-color: rgb(70, 163, 239);
-  color: white;
-  margin-right: 2rem;
-  width: 100px;
+  padding: 20px 20px 0 20px;
+  margin: 0 auto;
 }
 
 .logoutBtn {
