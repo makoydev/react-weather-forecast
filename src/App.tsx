@@ -37,11 +37,7 @@ const App = () => {
                 <ProtectedRoute
                   component={HomePage}
                   userName={user?.name || "User Name"}
-                  userGithubUrl={
-                    user?.nickname
-                      ? `https://github.com/makoydev`
-                      : "https://github.com/username"
-                  }
+                  userGithubUrl={user?.email || "User Email"}
                 />
               }
             />
