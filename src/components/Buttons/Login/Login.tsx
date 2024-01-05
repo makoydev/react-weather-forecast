@@ -8,7 +8,6 @@ function LoginButton() {
     loginWithRedirect();
   };
 
-  // Log the error in the console
   if (error) {
     console.error("Auth0 Login Error:", error);
   }
@@ -21,7 +20,6 @@ function LoginButton() {
         </button>
       )}
       {error && <p>Error during login: {error.message}</p>}{" "}
-      {/* Display error message */}
     </>
   );
 }
