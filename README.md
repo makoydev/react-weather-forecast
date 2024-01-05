@@ -22,41 +22,41 @@ This Weather App is a React-based web application allowing users to view weather
 ## Project Checklist
 
 - [x] **React Setup**\
-        - [x] Initialize project with Vite and TypeScript.\
-        - [x] Set up SCSS Modules for styling.
+         - [x] Initialize project with Vite and TypeScript.\
+         - [x] Set up SCSS Modules for styling.
 
 - [x] **User Authentication**\
-        - [x] Integrate Auth0 for secure user authentication.\
-        - [x] Implement login functionality using GitHub credentials.
+         - [x] Integrate Auth0 for secure user authentication.\
+         - [x] Implement login functionality.
 
 - [x] **Weather Forecast Functionality**\
-        - [x] Fetch weather data using OpenWeatherMap API.\
-        - [x] Display weather information in a table format.
+         - [x] Fetch weather data using OpenWeatherMap API.\
+         - [x] Display weather information in a table format.
 
 - [x] **UI Components and Responsiveness**\
-        - [x] Create a responsive header with logout functionality.\
-        - [x] Implement a responsive layout for the WeatherPageTable.\
-        - [x] Add a magnifying glass icon inside the city input field.\
-        - [x] Ensure mobile responsiveness across the application.
+         - [x] Create a responsive header with logout functionality.\
+         - [x] Implement a responsive layout for the WeatherPageTable.\
+         - [x] Add a magnifying glass icon inside the city input field.\
+         - [x] Ensure mobile responsiveness across the application.
 
 - [x] **Protected Routes and Navigation**\
-        - [x] Set up React Router for application routing.\
-        - [x] Implement protected routes accessible only to authenticated users.\
-        - [x] Add back navigation functionality on the WeatherPageTable.
+         - [x] Set up React Router for application routing.\
+         - [x] Implement protected routes accessible only to authenticated users.\
+         - [x] Add back navigation functionality on the WeatherPageTable.
 
 - [x] **State Management**\
-        - [x] Utilize React Context API for managing the city state across components.
+         - [x] Utilize React Context API for managing the city state across components.
 
 - [x] **Loading and Error Handling**\
-        - [x] Create a reusable Loading component.\
-        - [x] Implement error handling for API requests and authentication.
+         - [x] Create a reusable Loading component.\
+         - [x] Implement error handling for API requests and authentication.
 
 - [x] **Documentation**\
-        - [x] Write a comprehensive README.md file.
+         - [x] Write a comprehensive README.md file.
 
 - [x] **Additional Features**\
-        - [x] Add a user notification for non-authenticated access attempts.\
-        - [x] Implement mobile-specific styles for better usability on smaller devices.
+         - [x] Add a user notification for non-authenticated access attempts.\
+         - [x] Implement mobile-specific styles for better usability on smaller devices.
 
 ## Project Structure
 
