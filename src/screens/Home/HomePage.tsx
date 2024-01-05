@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./HomePage.module.scss";
 import { useCity } from "../../context/useCityContext";
+import SearchIcon from "@mui/icons-material/Search";
 
 interface HomePageProps {
   userName: string;
@@ -33,15 +34,18 @@ const HomePage: React.FC<HomePageProps> = ({ userName, userGithubUrl }) => {
       <a href={userGithubUrl} target="_blank" rel="noopener noreferrer">
         {userGithubUrl}
       </a>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="city"
-          value={city}
-          onChange={handleCityChange}
-          placeholder="Enter city"
-          className={style.cityInput}
-        />
+      <form onSubmit={handleSubmit} className={style.form}>
+        <div className={style.searchInputContainer}>
+          <input
+            type="text"
+            name="city"
+            value={city}
+            onChange={handleCityChange}
+            placeholder="Enter city"
+            className={style.cityInput}
+          />
+          <SearchIcon className={style.searchIcon} />
+        </div>
         <button type="submit" className={style.submitButton}>
           Check Weather
         </button>
