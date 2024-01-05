@@ -3,6 +3,7 @@ import style from "./WeatherPage.module.scss";
 import WeatherPageTable from "./WeatherPageTable";
 import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../../components/Loading";
+import { useCity } from "../../context/useCity";
 
 interface WeatherPageProps {}
 
@@ -26,6 +27,7 @@ interface WeatherData {
 }
 
 const WeatherPage: React.FC<WeatherPageProps> = () => {
+  const { setCity } = useCity();
   const { city } = useParams<{ city: string }>();
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(false);
@@ -35,6 +37,7 @@ const WeatherPage: React.FC<WeatherPageProps> = () => {
 
   const handleBack = () => {
     navigate("/home");
+    setCity("");
   };
 
   useEffect(() => {
