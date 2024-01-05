@@ -6,6 +6,19 @@
   padding-top: 20px;
 }
 
+.backBtn {
+  padding: 0.5rem;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-color: rgb(70, 163, 239);
+  color: white;
+  margin-right: 2rem;
+  width: 100px;
+}
+
 .logoutBtn {
   padding: 0.5rem;
   background-color: #f0f0f0;
@@ -15,4 +28,5 @@
   transition: all 0.2s ease-in-out;
   background-color: rgb(239, 70, 70);
   color: white;
+  width: 100px;
 }
