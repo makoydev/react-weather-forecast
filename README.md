@@ -49,7 +49,7 @@ To set up the project locally, follow these steps:
 
   bash
 
-  - `cd weather-app`
+  - `cd react-weather-forecast`
 
   - **Install dependencies**:
 
