@@ -29,9 +29,9 @@ const HomePage: React.FC<HomePageProps> = ({ userName, userGithubUrl }) => {
 
   return (
     <div className={style.container}>
-      <h1>Welcome, {userName}</h1>
+      <h1>Welcome, {userName}!</h1>
       <a href={userGithubUrl} target="_blank" rel="noopener noreferrer">
-        Visit GitHub Profile
+        {userGithubUrl}
       </a>
       <form onSubmit={handleSubmit}>
         <input
