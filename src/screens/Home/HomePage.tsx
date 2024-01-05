@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./HomePage.module.scss";
+import { useCity } from "../../context/useCityContext";
 
 interface HomePageProps {
   userName: string;
@@ -8,17 +9,22 @@ interface HomePageProps {
 }
 
 const HomePage: React.FC<HomePageProps> = ({ userName, userGithubUrl }) => {
-  const [city, setCity] = useState("");
+  const { city, setCity } = useCity();
   const navigate = useNavigate();
 
   const handleCityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCity(event.target.value);
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Navigate to Weather screen with the city
-    navigate(`/weather/${city}`);
+    const trimmedCity = city.trim();
+
+    if (trimmedCity) {
+      navigate(`/weather/${trimmedCity}`);
+    } else {
+      alert("Please enter a city name");
+    }
   };
 
   return (
@@ -30,6 +36,7 @@ const HomePage: React.FC<HomePageProps> = ({ userName, userGithubUrl }) => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          name="city"
           value={city}
           onChange={handleCityChange}
           placeholder="Enter city"
