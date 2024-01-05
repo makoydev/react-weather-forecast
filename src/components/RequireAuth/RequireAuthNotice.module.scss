@@ -1,0 +1,21 @@
+.noticeContainer {
+  text-align: center;
+  margin-top: 50px; // Adjust as needed
+
+  p {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 0.5rem;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-color: rgb(70, 163, 239);
+    color: white;
+    width: 100px;
+  }
+}
