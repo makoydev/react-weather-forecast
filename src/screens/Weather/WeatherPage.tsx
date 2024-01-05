@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import style from "./WeatherPage.module.scss";
 import WeatherPageTable from "./WeatherPageTable";
+import { useParams } from "react-router-dom";
 
-interface WeatherPageProps {
-  city: string;
-}
+interface WeatherPageProps {}
 
 // Interface for the weather data
 interface WeatherData {
@@ -25,7 +24,8 @@ interface WeatherData {
   }[];
 }
 
-const WeatherPage: React.FC<WeatherPageProps> = ({ city }) => {
+const WeatherPage: React.FC<WeatherPageProps> = () => {
+  const { city } = useParams<{ city: string }>();
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
