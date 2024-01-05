@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Navigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import Loading from "../components/Loading";
+import RequireAuthNotice from "../components/RequireAuth";
 
 interface ProtectedRouteProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -19,7 +19,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
     return <Loading />;
   }
 
-  return isAuthenticated ? <Component {...props} /> : <Navigate to="/" />;
+  return isAuthenticated ? <Component {...props} /> : <RequireAuthNotice />;
 };
 
 export default ProtectedRoute;
