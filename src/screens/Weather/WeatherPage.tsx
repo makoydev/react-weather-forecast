@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import style from "./WeatherPage.module.scss";
 import WeatherPageTable from "./WeatherPageTable";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../../components/Loading";
 
 interface WeatherPageProps {}
@@ -30,6 +30,12 @@ const WeatherPage: React.FC<WeatherPageProps> = () => {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate("/home");
+  };
 
   useEffect(() => {
     const fetchWeatherData = async () => {
@@ -63,6 +69,11 @@ const WeatherPage: React.FC<WeatherPageProps> = () => {
     <div className={style.container}>
       <h1>Weather in {city}</h1>
       {weatherData && <WeatherPageTable weatherData={weatherData} />}
+      <div className={style.backContainer}>
+        <button className={style.backBtn} onClick={handleBack}>
+          Back to Home
+        </button>
+      </div>
     </div>
   );
 };
