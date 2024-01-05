@@ -6,31 +6,48 @@ import WeatherPage from "./screens/Weather/WeatherPage";
 import AuthRedirect from "./components/AuthRedirect";
 import style from "./App.module.scss";
 import { CityProvider } from "./context/useCityContext";
+import { useEffect } from "react";
+import ProtectedRoute from "./screens/ProtectedRoute";
+import Header from "./components/Header";
 
 const App = () => {
-  const { isLoading } = useAuth0();
+  const { isLoading, user, isAuthenticated } = useAuth0();
+
+  useEffect(() => {
+    console.log("Is Authenticated:", isAuthenticated);
+    console.log("User:", user);
+  }, [isAuthenticated, user]);
 
   if (isLoading) {
-    return <div>Loading...</div>; // Display loading message while authenticating
+    return <div>Loading...</div>;
   }
 
   return (
     <div className={style.container}>
       <CityProvider>
         <BrowserRouter>
+          <Header />
           <AuthRedirect />
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route
               path="/home"
               element={
-                <HomePage
-                  userName="User Name"
-                  userGithubUrl="https://github.com/username"
+                <ProtectedRoute
+                  component={HomePage}
+                  userName={user?.name || "User Name"}
+                  userGithubUrl={
+                    user?.nickname
+                      ? `https://github.com/makoydev`
+                      : "https://github.com/username"
+                  }
                 />
               }
             />
-            <Route path="/weather/:city" element={<WeatherPage />} />
+            <Route
+              path="/weather/:city"
+              element={<ProtectedRoute component={WeatherPage} />}
+            />
           </Routes>
         </BrowserRouter>
       </CityProvider>
