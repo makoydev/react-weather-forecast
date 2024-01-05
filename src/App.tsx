@@ -5,7 +5,7 @@ import HomePage from "./screens/Home/HomePage";
 import WeatherPage from "./screens/Weather/WeatherPage";
 import AuthRedirect from "./components/AuthRedirect";
 import style from "./App.module.scss";
-import { CityProvider } from "./context/useCityContext";
+import { CityProvider } from "./context/CityContext";
 import { useEffect } from "react";
 import ProtectedRoute from "./screens/ProtectedRoute";
 import Header from "./components/Header";
